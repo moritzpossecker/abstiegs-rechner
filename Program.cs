@@ -1,10 +1,14 @@
 using Abstiegsrechner.Components;
+using Abstiegsrechner.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddSingleton<UpdateService>();
+builder.Services.AddSingleton<RelegationService>();
 
 var app = builder.Build();
 
