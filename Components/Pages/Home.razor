@@ -1,9 +1,49 @@
 ﻿@page "/"
 
-<PageTitle>Abstiegsrechner  Roter Stern Leipzig</PageTitle>
+<PageTitle>Abstiegsrechner Roter Stern Leipzig</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Abstiegsrechner Roter Stern Leipzig</h1>
 
-Welcome to your new app.
+<div class="card-container">
+<div class="team-card @GetFirstTeamCardClass()">
+    <h3>Erste</h3>
+    @if (_ersteSteigtAb)
+    {
+        <p>Steigt ab.</p>
+    }
+    else
+    {
+        <p>Hält die Klasse.</p>
+    }
+</div>
 
-@_lastTimeUpdated
+<div class="team-card @GetSecondTeamCardClass()">
+    <h3>Zwote</h3>
+    @if (_zwoteSteigtAb)
+    {
+            <p>Steigt ab. <br/> @GetSecondTeamDescription()</p>
+    }
+    else
+    {
+            <p>Hält die Klasse. <br /> @GetSecondTeamDescription()</p>
+    }
+</div>
+
+<div class="team-card @GetThirdTeamCardClass()">
+    <h3>Dritte</h3>
+    @if (_dritteSteigtAb)
+    {
+            <p>Steigt ab. <br /> @GetThirdTeamDescription()</p>
+    }
+    else
+    {
+            <p>Hält die Klasse. <br />  @GetThirdTeamDescription()</p>
+    }
+</div>
+</div>
+
+<p class="update">
+    Zuletzt aktualisiert: @_lastTimeUpdated
+    <br/>
+    Alle Daten beziehen sich auf fussball.de zur angegebenen Zeit.
+</p>

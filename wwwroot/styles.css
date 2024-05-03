@@ -1,0 +1,64 @@
+﻿:root {
+    --red: rgba(173, 13, 47, 0.6);
+    --green: rgba(59, 193, 74, 0.6);
+    --yellow: rgba(227, 178, 60, 0.6);
+    --black: #252525;
+    --white: #F4F4F4;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(image.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+
+    font-family: 'Teachers', sans-serif;
+}
+
+h1{
+    color: var(--white);
+    padding: 2rem 10%;
+}
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-card{
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    color: var(--white);
+    width: 80%;
+}
+
+    .team-card.success {
+        background: var(--green);
+    }
+
+    .team-card.fail {
+        background: var(--red);
+    }
+
+    .team-card.depending {
+        background: var(--yellow);
+    }
+
+.team-card p{
+    padding: 0.5rem 10vmin;
+}
+
+.update{
+    width: 100%;
+    text-align: center;
+    color: var(--white);
+    padding-bottom: 2rem;
+}
