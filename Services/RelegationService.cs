@@ -15,10 +15,7 @@
             _updateService = updateService;
             _updateService.Update += CheckRelegationStatus;
 
-            LastTimeUpdated = DateTime.Now;
-
             Calculator = new RelegationCalculator();
-            Calculator.Calculate();
         }
 
         private void CheckRelegationStatus()
