@@ -32,12 +32,17 @@ h1{
     align-items: center;
 }
 
+a{
+    text-decoration: none;
+}
+
 .team-card{
     margin-bottom: 2rem;
     padding: 1rem 2rem;
     border-radius: 0.75rem;
     color: var(--white);
     width: 80%;
+    cursor: pointer;
 }
 
     .team-card.success {

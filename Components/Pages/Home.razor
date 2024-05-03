@@ -1,49 +1,50 @@
 ﻿@page "/"
+@using Abstiegsrechner.Resources;
 
 <PageTitle>Abstiegsrechner Roter Stern Leipzig</PageTitle>
 
 <h1>Abstiegsrechner Roter Stern Leipzig</h1>
 
 <div class="card-container">
-<div class="team-card @GetFirstTeamCardClass()">
-    <h3>Erste</h3>
-    @if (_ersteSteigtAb)
-    {
-        <p>Steigt ab.</p>
-    }
-    else
-    {
-        <p>Hält die Klasse.</p>
-    }
-</div>
+    <a class="team-card @GetFirstTeamCardClass()" href="@Constants.FIRST_TEAM_LEAGUE_URL">
+        <h3>Erste</h3>
+        @if (_ersteSteigtAb)
+        {
+            <p>Steigt ab.</p>
+        }
+        else
+        {
+            <p>Hält die Klasse.</p>
+        }
+    </a>
 
-<div class="team-card @GetSecondTeamCardClass()">
-    <h3>Zwote</h3>
-    @if (_zwoteSteigtAb)
-    {
-            <p>Steigt ab. <br/> @GetSecondTeamDescription()</p>
-    }
-    else
-    {
+    <a class="team-card @GetSecondTeamCardClass()" href="@Constants.SECOND_TEAM_LEAGUE_URL">
+        <h3>Zwote</h3>
+        @if (_zwoteSteigtAb)
+        {
+            <p>Steigt ab. <br /> @GetSecondTeamDescription()</p>
+        }
+        else
+        {
             <p>Hält die Klasse. <br /> @GetSecondTeamDescription()</p>
-    }
-</div>
+        }
+    </a>
 
-<div class="team-card @GetThirdTeamCardClass()">
-    <h3>Dritte</h3>
-    @if (_dritteSteigtAb)
-    {
+    <a class="team-card @GetThirdTeamCardClass()" href="@Constants.THIRD_TEAM_LEAGUE_URL">
+        <h3>Dritte</h3>
+        @if (_dritteSteigtAb)
+        {
             <p>Steigt ab. <br /> @GetThirdTeamDescription()</p>
-    }
-    else
-    {
+        }
+        else
+        {
             <p>Hält die Klasse. <br />  @GetThirdTeamDescription()</p>
-    }
-</div>
+        }
+    </a>
 </div>
 
 <p class="update">
     Zuletzt aktualisiert: @_lastTimeUpdated
-    <br/>
+    <br />
     Alle Daten beziehen sich auf fussball.de zur angegebenen Zeit.
 </p>
