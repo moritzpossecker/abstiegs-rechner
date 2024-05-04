@@ -60,6 +60,18 @@ namespace Abstiegsrechner.Components.Pages
 
         private string GetThirdTeamCardClass()
         {
+            if (_zwoteSteigtAb)
+            {
+                if (_zwoteBrauchtAufstieg)
+                {
+                    return DEPENDS_CLASS;
+                }
+                else
+                {
+                    return FAIL_CLASS;
+                }
+            }
+
             if (!_dritteSteigtAb)
                 return SUCCESS_CLASS;
 
@@ -82,20 +94,31 @@ namespace Abstiegsrechner.Components.Pages
 
         private string GetThirdTeamDescription()
         {
-            if (!_dritteSteigtAb)
-                return string.Empty;
-
             if(_dritteSteigtOhneZwoteAb)
                 if (_dritteBrauchtAufstieg)
                 {
-                    return "Können noch die Klasse halten, wenn der Stadtligameister die Relegation gewinnt.";
+                    string text = "Können noch die Klasse halten, wenn der Stadtligameister die Relegation gewinnt.";
+
+                    if (_zwoteSteigtAb)
+                    {
+                        text = text + " Müssen aber trotzdem zwangsabsteigen, weil die Zwote absteigt.";
+                    }
+                    return text;
+                }
+
+            if(_zwoteSteigtAb)
+            {
+                if (_zwoteBrauchtAufstieg)
+                {
+                    return "Müssen zwangsabsteigen, weil die Zwote absteigt, falls der Statdligameister nicht die Relegation gewinnt";
                 }
                 else
                 {
-                    return string.Empty;
+                    return "Müssen zwangsabsteigen, weil die Zwote absteigt.";
                 }
+            }
 
-            return "Steigen durch Zwangsabstieg ab, weil die Zwote absteigt.";
+            return string.Empty;
         }
     }
 }

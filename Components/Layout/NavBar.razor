@@ -1,0 +1,11 @@
+﻿@inject NavigationManager NavManager
+
+@{
+    string impressumUrl = NavManager.BaseUri + "impressum";
+    string dataSecurityUrl = NavManager.BaseUri + "datenschutz";
+}
+
+<div class="nav-bar">
+    <a href="@impressumUrl">Impressum</a>
+    <a href="@dataSecurityUrl">Datenschutz</a>
+</div>
